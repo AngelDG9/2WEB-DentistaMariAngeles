@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedir Cita | Dra. Mariángeles Lazcano</title>
+  <link rel="icon" href="imagenes/clinica-lazcano.jpg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos/estilos.css">
+  <link rel="stylesheet" href="estilos/citas.css">
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <span>📍 Av. de Europa (Urb. Entreparques I), Jerez de la Frontera</span>
+      <span>📞 Cita Previa y Urgencias: <a href="tel:856815199">856 81 51 99</a></span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <span class="logo-nombre">Dra. Mariángeles Lazcano</span>
+        <span class="logo-sub">CLÍNICA DENTAL EN JEREZ</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#tratamientos">Tratamientos</a>
+        <a href="index.html#nosotros">La Clínica</a>
+        <a href="index.html#ubicacion">Contacto</a>
+      </nav>
+      <a href="index.html" class="btn btn-secundario">Volver al inicio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="citas-hero">
+      <div class="container">
+        <span class="tag-badge">CITA ONLINE</span>
+        <h1>Reserva tu cita dental</h1>
+        <p>Elige el tratamiento, el día y la hora que mejor te venga. Te mostraremos únicamente los horarios disponibles.</p>
+      </div>
+    </section>
+
+    <section class="seccion citas-seccion">
+      <div class="container citas-layout">
+        <div class="form-contenedor cita-card">
+          <div class="cita-card-header">
+            <div>
+              <span class="mini-label">PASO 1 · DATOS DE LA CITA</span>
+              <h2>Solicita tu cita</h2>
+            </div>
+            <span class="estado-online"><span></span> Online</span>
+          </div>
+
+          <form id="citaForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nombre">Nombre y apellidos *</label>
+                <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono *</label>
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="Ej. 600 123 456" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com">
+              </div>
+              <div class="form-group">
+                <label for="tratamiento">Tratamiento *</label>
+                <select id="tratamiento" name="tratamiento" required>
+                  <option value="">Selecciona un tratamiento</option>
+                  <option>Primera consulta / revisión</option>
+                  <option>Limpieza dental</option>
+                  <option>Odontología general</option>
+                  <option>Estética dental</option>
+                  <option>Implantología y prótesis</option>
+                  <option>Ortodoncia</option>
+                  <option>Odontopediatría</option>
+                  <option>Endodoncia y periodoncia</option>
+                  <option>Urgencia dental</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fecha">Fecha *</label>
+                <input id="fecha" name="fecha" type="date" required>
+              </div>
+              <div class="form-group">
+                <label for="hora">Hora disponible *</label>
+                <select id="hora" name="hora" required disabled>
+                  <option value="">Primero selecciona una fecha</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="notas">Motivo o información adicional</label>
+              <textarea id="notas" name="notas" rows="4" placeholder="Cuéntanos brevemente qué necesitas..."></textarea>
+            </div>
+
+            <label class="check-privacidad">
+              <input type="checkbox" id="privacidad" required>
+              <span>Acepto que estos datos se utilicen para gestionar mi solicitud de cita. *</span>
+            </label>
+
+            <button class="btn btn-primario btn-block btn-reservar" type="submit">Confirmar cita</button>
+            <p class="form-aviso">* Campos obligatorios. Las citas de urgencia quedan sujetas a disponibilidad.</p>
+          </form>
+
+          <div id="mensajeExito" class="mensaje-exito" hidden>
+            <div class="exito-icono">✓</div>
+            <div>
+              <h3>Solicitud registrada</h3>
+              <p id="detalleExito"></p>
+              <button id="nuevaCita" class="btn btn-secundario">Reservar otra cita</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="cita-sidebar">
+          <div class="resumen-cita">
+            <span class="mini-label">TU CITA</span>
+            <h3>Resumen de reserva</h3>
+            <div class="resumen-linea"><span>Tratamiento</span><strong id="resumenTratamiento">—</strong></div>
+            <div class="resumen-linea"><span>Fecha</span><strong id="resumenFecha">—</strong></div>
+            <div class="resumen-linea"><span>Hora</span><strong id="resumenHora">—</strong></div>
+          </div>
+
+          <div class="info-cita">
+            <h3>Horario de consulta</h3>
+            <p><strong>Lunes a Viernes</strong><br>10:00–14:00 · 16:30–20:30</p>
+            <p><strong>Sábados</strong><br>Atención de urgencias</p>
+            <a href="tel:856815199" class="btn-link">¿Necesitas ayuda? 856 81 51 99 →</a>
+          </div>
+
+          <div class="admin-mini">
+            <h3>Gestión de citas</h3>
+            <p>Desde este navegador puedes consultar y cancelar las citas que hayas registrado.</p>
+            <button id="verCitas" class="btn btn-secundario btn-block" type="button">Ver mis citas</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="misCitas" class="seccion mis-citas" hidden>
+      <div class="container">
+        <div class="seccion-titulo">
+          <h2>Citas registradas</h2>
+          <p>Gestión local de las reservas realizadas desde este navegador.</p>
+        </div>
+        <div id="listaCitas" class="lista-citas"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>2026 Dra. Mariángeles Lazcano | Clínica Dental en Jerez · &copy; 2WEB Project</p>
+    </div>
+  </footer>
+
+  <script src="js/citas.js"></script>
+</body>
+</html>

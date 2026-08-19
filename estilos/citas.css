@@ -1,0 +1,124 @@
+.citas-hero {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 55px 0 45px;
+  border-bottom: 1px solid var(--gris-borde);
+}
+.citas-hero h1 {
+  font-family: var(--fuente-titulo);
+  color: var(--azul-principal);
+  font-size: 2.35rem;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+.citas-hero p {
+  max-width: 720px;
+  color: var(--texto-suave);
+  font-size: 1.02rem;
+}
+.citas-seccion { background: var(--gris-fondo); }
+.citas-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, .75fr);
+  gap: 30px;
+  align-items: start;
+}
+.cita-card { padding: 32px; }
+.cita-card-header {
+  display:flex; justify-content:space-between; align-items:flex-start;
+  gap:20px; margin-bottom:25px;
+}
+.cita-card-header h2 {
+  font-family:var(--fuente-titulo); color:var(--azul-principal);
+  font-size:1.65rem; margin-top:5px;
+}
+.mini-label {
+  color:var(--azul-medico); font-size:.72rem; font-weight:700;
+  letter-spacing:1px;
+}
+.estado-online {
+  color:var(--azul-principal); background:var(--azul-claro);
+  border:1px solid #bae6fd; border-radius:20px; padding:7px 11px;
+  font-size:.78rem; font-weight:700; white-space:nowrap;
+}
+.estado-online span {
+  display:inline-block; width:7px; height:7px; background:#22c55e;
+  border-radius:50%; margin-right:6px;
+}
+.form-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:0 18px;
+}
+.form-group textarea { width:100%; resize:vertical; padding:11px;
+  border:1px solid var(--gris-borde); border-radius:4px;
+  font-family:var(--fuente-cuerpo); font-size:.95rem;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline:2px solid #bae6fd; border-color:var(--azul-medico);
+}
+.form-group input:invalid:not(:placeholder-shown),
+.form-group select:invalid:not(:focus) { }
+.check-privacidad {
+  display:flex; gap:10px; align-items:flex-start; color:var(--texto-suave);
+  font-size:.82rem; margin:5px 0 18px; cursor:pointer;
+}
+.check-privacidad input { margin-top:4px; accent-color:var(--azul-medico); }
+.btn-reservar { padding:13px 22px; font-size:.95rem; }
+.form-aviso { color:var(--texto-suave); font-size:.76rem; margin-top:10px; }
+.cita-sidebar { display:grid; gap:18px; }
+.resumen-cita, .info-cita, .admin-mini {
+  background:var(--blanco); border:1px solid var(--gris-borde);
+  border-radius:8px; padding:24px;
+}
+.resumen-cita { border-top:4px solid var(--azul-medico); }
+.resumen-cita h3, .info-cita h3, .admin-mini h3 {
+  font-family:var(--fuente-titulo); color:var(--azul-principal);
+  margin:5px 0 18px;
+}
+.resumen-linea {
+  display:flex; justify-content:space-between; gap:15px;
+  border-top:1px solid var(--gris-borde); padding:12px 0;
+  font-size:.85rem;
+}
+.resumen-linea span { color:var(--texto-suave); }
+.resumen-linea strong { color:var(--azul-principal); text-align:right; }
+.info-cita p, .admin-mini p { color:var(--texto-suave); font-size:.88rem; margin-bottom:15px; }
+.info-cita strong { color:var(--azul-principal); }
+.mensaje-exito {
+  display:flex; gap:18px; align-items:flex-start; padding:22px;
+  background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px;
+}
+.exito-icono {
+  width:40px; height:40px; border-radius:50%; display:grid; place-items:center;
+  background:#16a34a; color:white; font-weight:700; flex:none;
+}
+.mensaje-exito h3 { font-family:var(--fuente-titulo); color:var(--azul-principal); margin-bottom:5px; }
+.mensaje-exito p { color:var(--texto-suave); margin-bottom:12px; }
+.lista-citas { display:grid; gap:15px; max-width:900px; margin:auto; }
+.cita-item {
+  background:var(--blanco); border:1px solid var(--gris-borde); border-radius:8px;
+  padding:20px; display:grid; grid-template-columns:1fr auto; gap:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.03);
+}
+.cita-item h3 { font-family:var(--fuente-titulo); color:var(--azul-principal); font-size:1rem; }
+.cita-meta { color:var(--texto-suave); font-size:.86rem; margin-top:5px; }
+.cita-estado {
+  display:inline-block; margin-top:9px; padding:4px 9px; border-radius:20px;
+  background:var(--azul-claro); color:var(--azul-principal); font-size:.72rem; font-weight:700;
+}
+.btn-cancelar { background:#fff; color:#b91c1c; border:1px solid #fecaca; }
+.btn-cancelar:hover { background:#fef2f2; }
+.sin-citas {
+  text-align:center; padding:30px; background:var(--blanco);
+  border:1px dashed var(--gris-borde); border-radius:8px; color:var(--texto-suave);
+}
+@media (max-width: 900px) {
+  .citas-layout { grid-template-columns:1fr; }
+  .cita-sidebar { grid-template-columns:repeat(3,1fr); }
+}
+@media (max-width: 768px) {
+  .citas-hero h1 { font-size:1.9rem; }
+  .cita-card { padding:22px; }
+  .form-grid { grid-template-columns:1fr; }
+  .cita-sidebar { grid-template-columns:1fr; }
+  .cita-card-header { flex-direction:column; }
+  .cita-item { grid-template-columns:1fr; }
+}

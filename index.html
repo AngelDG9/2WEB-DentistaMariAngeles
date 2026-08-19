@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos/estilos.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
 
@@ -132,6 +133,7 @@
           <li>✓ Seguimiento continuo post-tratamiento.</li>
           <li>✓ Instalaciones adaptadas y climatizadas.</li>
         </ul>
+          <a href="#clinica" class="btn btn-primario">Ver más</a>
       </div>
     </div>
   </section>
@@ -159,29 +161,8 @@
         </div>
       </div>
 
-      <div class="form-contenedor" id="cita">
-        <h3>Solicita tu Cita Previa</h3>
-        <form class="form-cita" onsubmit="event.preventDefault(); alert('Solicitud enviada correctamente.');">
-          <div class="form-group">
-            <label for="nombre">Nombre Completo</label>
-            <input type="text" id="nombre" required placeholder="Ej. Ana García">
-          </div>
-          <div class="form-group">
-            <label for="telefono">Teléfono de Contacto</label>
-            <input type="tel" id="telefono" required placeholder="Ej. 600 000 000">
-          </div>
-          <div class="form-group">
-            <label for="tratamiento">Tratamiento de Interés</label>
-            <select id="tratamiento">
-              <option value="general">Revision / Limpieza</option>
-              <option value="estetica">Estética Dental</option>
-              <option value="implantes">Implantes / Prótesis</option>
-              <option value="ortodoncia">Ortodoncia</option>
-              <option value="otro">Otra consulta</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primario btn-block">Enviar Solicitud de Cita</button>
-        </form>
+      <div class="mapa-marco">
+        <div id="map"></div>
       </div>
 
     </div>
@@ -192,6 +173,24 @@
       <p>2026 Dra. Mariángeles Lazcano | Clínica Dental en Jerez · &copy; 2WEB Project</p>
     </div>
   </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      const map = L.map('map').setView([36.698225, -6.1143234871], 16);
 
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+      }).addTo(map);
+
+      const marcadorClinica = L.divIcon({
+        className: 'marcador-clinica',
+        html: '<span></span>',
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+      });
+
+      L.marker([36.698225,-6.1143234871], { icon: marcadorClinica }).addTo(map)
+        .bindPopup('<b>Clínica Dental Mariángeles Lazcano</b><br>Av. de Europa, Urb. Entreparques I<br>Jerez de la Frontera')
+        .openPopup();
+  </script>
 </body>
 </html>

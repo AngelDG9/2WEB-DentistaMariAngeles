@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const items = Array.from(document.querySelectorAll('.galeria-item-clinica, .card-sonrisa'));
+  const items = Array.from(document.querySelectorAll('.galeria-item-clinica, .card-equipo, .card-sonrisa'));
   const lightbox = document.getElementById('lightbox-clinica');
   if (!items.length || !lightbox) return;
 

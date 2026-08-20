@@ -408,6 +408,16 @@ body {
   overflow: hidden;
 }
 
+#map:focus {
+  outline: none;
+}
+
+.galeria-item-clinica,
+.card-equipo,
+.card-sonrisa {
+  -webkit-tap-highlight-color: transparent;
+}
+
 #map {
   width: 100%;
   height: 100%;
@@ -590,6 +600,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--gris-borde);
+  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -597,6 +608,12 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
   border-color: var(--azul-medico);
+}
+
+.card-equipo:focus,
+.galeria-item-clinica:focus,
+.card-sonrisa:focus {
+  outline: none;
 }
 
 .card-equipo img {
@@ -640,7 +657,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 200;
+  z-index: 1000;
   padding: 40px;
 }
 

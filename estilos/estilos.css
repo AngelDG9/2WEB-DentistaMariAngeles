@@ -507,8 +507,7 @@ body {
   width: 100%;
   height: 420px;
   object-fit: cover;
-  object-position: left top;
-  clip-path: inset(0 25% 0 0);
+  object-position: top;
 }
 
 #btn-ver-mas {
@@ -724,7 +723,6 @@ body {
 
   .sobre-foto img {
     height: 360px;
-    clip-path: none;
   }
 
   .grid-galeria-clinica,

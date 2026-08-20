@@ -473,12 +473,258 @@ body {
   font-size: 0.85rem;
 }
 
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.sobre-foto {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--gris-borde);
+  box-shadow: 0 10px 25px rgba(10, 54, 99, 0.08);
+}
+
+.sobre-foto img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: top;
+}
+
+#btn-ver-mas {
+  margin-top: 20px;
+}
+
+.clinica {
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid var(--gris-borde);
+}
+
+.clinica[hidden] {
+  display: none !important;
+}
+
+#clinica:not([hidden]) {
+  animation: clinica-aparecer 0.4s ease;
+}
+
+@keyframes clinica-aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.clinica-intro h3 {
+  font-family: var(--fuente-titulo);
+  color: var(--azul-principal);
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.clinica-intro p {
+  color: var(--texto-suave);
+  margin-bottom: 12px;
+}
+
+.clinica-bloque {
+  margin-top: 40px;
+}
+
+.clinica-bloque h4 {
+  font-family: var(--fuente-titulo);
+  color: var(--azul-principal);
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.clinica-bloque-sub {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.grid-galeria-clinica {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.galeria-item-clinica {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--gris-borde);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.galeria-item-clinica:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  border-color: var(--azul-medico);
+}
+
+.galeria-item-clinica img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.grid-equipo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card-equipo {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--gris-borde);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-equipo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  border-color: var(--azul-medico);
+}
+
+.card-equipo img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.grid-sonrisas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.card-sonrisa {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--gris-borde);
+}
+
+.card-sonrisa img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.clinica-datos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+  text-align: center;
+  padding: 30px;
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 8px;
+}
+
+.dato-clinica .dato-numero {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--azul-principal);
+  display: block;
+}
+
+.dato-clinica p {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.lightbox-clinica {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 54, 99, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 40px;
+}
+
+.lightbox-clinica[hidden] {
+  display: none !important;
+}
+
+.lightbox-figura {
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 8px;
+  border: 2px solid var(--blanco);
+  display: block;
+}
+
+.lightbox-cerrar {
+  position: absolute;
+  top: 24px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: var(--blanco);
+  font-size: 2.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--blanco);
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-anterior { left: 24px; }
+.lightbox-siguiente { right: 24px; }
+
 @media (max-width: 768px) {
   .hero-grid, .contacto-grid, .top-bar-content {
     grid-template-columns: 1fr;
     flex-direction: column;
     text-align: center;
     gap: 20px;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-foto img {
+    height: 360px;
+  }
+
+  .grid-galeria-clinica,
+  .grid-equipo,
+  .grid-sonrisas,
+  .clinica-datos {
+    grid-template-columns: 1fr;
   }
   
   .nav {

@@ -133,7 +133,78 @@
           <li>✓ Seguimiento continuo post-tratamiento.</li>
           <li>✓ Instalaciones adaptadas y climatizadas.</li>
         </ul>
-          <a href="#clinica" class="btn btn-primario">Ver más</a>
+        <button class="btn btn-primario" id="btn-ver-mas" aria-expanded="false" aria-controls="clinica">Ver más</button>
+      </div>
+      <figure class="sobre-foto">
+        <img src="imagenes/mariangeles_2.jpg" alt="Dra. Mariángeles Lazcano">
+      </figure>
+    </div>
+
+    <div class="container clinica" id="clinica" hidden>
+      <div class="clinica-intro">
+        <h3>Nuestra clínica en Entreparques</h3>
+        <p>Un espacio pensado para que te sientas tranquilo desde que entras. Instalaciones modernas, climatizadas y adaptadas, con protocolos de higiene rigurosos y tecnología que nos permite diagnósticos precisos y tratamientos cómodos.</p>
+        <p>Trabajamos sin prisas: cada caso se estudia y se explica con claridad, proponiendo solo lo necesario y haciendo seguimiento después de cada tratamiento. Así cuidamos de familias jerezanas desde hace más de 18 años.</p>
+      </div>
+
+      <div class="clinica-bloque">
+        <h4>El local</h4>
+        <p class="clinica-bloque-sub">Toca una foto para ampliarla.</p>
+        <div class="grid-galeria-clinica">
+          <figure class="galeria-item-clinica" data-full="imagenes/local/local_4.webp">
+            <img src="imagenes/local/local_4.webp" alt="Interior de la clínica">
+          </figure>
+          <figure class="galeria-item-clinica" data-full="imagenes/local/local_2.webp">
+            <img src="imagenes/local/local_2.webp" alt="Sala de la clínica">
+          </figure>
+          <figure class="galeria-item-clinica" data-full="imagenes/local/local_3.webp">
+            <img src="imagenes/local/local_3.webp" alt="Detalle de la clínica">
+          </figure>
+        </div>
+      </div>
+
+      <div class="clinica-bloque">
+        <h4>Nuestro equipo</h4>
+        <p class="clinica-bloque-sub">Cercanía y profesionalidad en cada visita.</p>
+        <div class="grid-equipo">
+          <figure class="card-equipo">
+            <img src="imagenes/equipo/equipo_1.jpg" alt="Equipo de la clínica">
+          </figure>
+          <figure class="card-equipo">
+            <img src="imagenes/equipo/equipo_2.webp" alt="Equipo de la clínica">
+          </figure>
+          <figure class="card-equipo">
+            <img src="imagenes/equipo/equipo_3.webp" alt="Equipo de la clínica">
+          </figure>
+        </div>
+      </div>
+
+      <div class="clinica-bloque">
+        <h4>Sonrisas reales</h4>
+        <p class="clinica-bloque-sub">Resultados naturales que hablan por sí solos.</p>
+        <div class="grid-sonrisas">
+          <figure class="card-sonrisa">
+            <img src="imagenes/sonrisas/sonrisa_1.jpg" alt="Sonrisa real de paciente">
+          </figure>
+          <figure class="card-sonrisa">
+            <img src="imagenes/sonrisas/sonrisa_2.jpg" alt="Sonrisa real de paciente">
+          </figure>
+        </div>
+      </div>
+
+      <div class="clinica-datos">
+        <div class="dato-clinica">
+          <span class="dato-numero">18+</span>
+          <p>años cuidando sonrisas en Jerez</p>
+        </div>
+        <div class="dato-clinica">
+          <span class="dato-numero">6</span>
+          <p>áreas de tratamiento integral</p>
+        </div>
+        <div class="dato-clinica">
+          <span class="dato-numero">Sáb</span>
+          <p>atención a urgencias</p>
+        </div>
       </div>
     </div>
   </section>
@@ -168,6 +239,15 @@
     </div>
   </section>
 
+  <div class="lightbox-clinica" id="lightbox-clinica" hidden>
+    <button class="lightbox-cerrar" aria-label="Cerrar">×</button>
+    <button class="lightbox-nav lightbox-anterior" aria-label="Anterior">&#10094;</button>
+    <figure class="lightbox-figura">
+      <img class="lightbox-img" src="" alt="">
+    </figure>
+    <button class="lightbox-nav lightbox-siguiente" aria-label="Siguiente">&#10095;</button>
+  </div>
+
   <footer class="footer">
     <div class="container footer-content">
       <p>2026 Dra. Mariángeles Lazcano | Clínica Dental en Jerez · &copy; 2WEB Project</p>
@@ -192,5 +272,6 @@
         .bindPopup('<b>Clínica Dental Mariángeles Lazcano</b><br>Av. de Europa, Urb. Entreparques I<br>Jerez de la Frontera')
         .openPopup();
   </script>
+  <script src="js/nosotros.js"></script>
 </body>
 </html>

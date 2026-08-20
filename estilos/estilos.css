@@ -305,6 +305,11 @@ body {
   background-color: var(--gris-fondo);
 }
 
+#nosotros,
+#clinica {
+  scroll-margin-top: 110px;
+}
+
 .subtitulo-medico {
   color: var(--azul-medico);
   font-weight: 700;
@@ -492,7 +497,8 @@ body {
   width: 100%;
   height: 420px;
   object-fit: cover;
-  object-position: top;
+  object-position: left top;
+  clip-path: inset(0 25% 0 0);
 }
 
 #btn-ver-mas {
@@ -610,6 +616,14 @@ body {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--gris-borde);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-sonrisa:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  border-color: var(--azul-medico);
 }
 
 .card-sonrisa img {
@@ -617,31 +631,6 @@ body {
   width: 100%;
   height: 280px;
   object-fit: cover;
-}
-
-.clinica-datos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 40px;
-  text-align: center;
-  padding: 30px;
-  background-color: var(--blanco);
-  border: 1px solid var(--gris-borde);
-  border-radius: 8px;
-}
-
-.dato-clinica .dato-numero {
-  font-family: var(--fuente-titulo);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--azul-principal);
-  display: block;
-}
-
-.dato-clinica p {
-  font-size: 0.85rem;
-  color: var(--texto-suave);
 }
 
 .lightbox-clinica {
@@ -718,12 +707,12 @@ body {
 
   .sobre-foto img {
     height: 360px;
+    clip-path: none;
   }
 
   .grid-galeria-clinica,
   .grid-equipo,
-  .grid-sonrisas,
-  .clinica-datos {
+  .grid-sonrisas {
     grid-template-columns: 1fr;
   }
   

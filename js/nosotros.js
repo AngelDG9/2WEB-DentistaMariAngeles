@@ -6,7 +6,19 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const abierto = clinica.hidden;
       clinica.hidden = !abierto;
-      btn.textContent = abierto ? 'Ver menos' : 'Ver más';
+      const chevron = btn.querySelector('.btn-chevron');
+      if (chevron) {
+        chevron.remove();
+        btn.textContent = '';
+        const nuevoChevron = document.createElement('span');
+        nuevoChevron.className = 'btn-chevron';
+        nuevoChevron.setAttribute('aria-hidden', 'true');
+        nuevoChevron.innerHTML = '&#9662;';
+        btn.appendChild(nuevoChevron);
+        btn.appendChild(document.createTextNode(abierto ? ' Ver menos' : ' Ver más'));
+      } else {
+        btn.textContent = abierto ? 'Ver menos' : 'Ver más';
+      }
       btn.setAttribute('aria-expanded', String(abierto));
       if (abierto) {
         clinica.scrollIntoView({ behavior: 'smooth', block: 'start' });

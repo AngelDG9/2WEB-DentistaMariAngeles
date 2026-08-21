@@ -495,19 +495,94 @@ body {
   align-items: center;
 }
 
+.kicker-seccion {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--azul-medico);
+  margin-bottom: 8px;
+}
+
+.texto-acento {
+  color: var(--azul-medico);
+}
+
+.cita-dra {
+  border-left: 4px solid var(--azul-medico);
+  background-color: var(--blanco);
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--azul-principal);
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
+
+.lista-check li::before {
+  content: "✓";
+  color: var(--azul-medico);
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.btn-chevron {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-right: 4px;
+}
+
+#btn-ver-mas[aria-expanded="true"] .btn-chevron {
+  transform: rotate(180deg);
+}
+
 .sobre-foto {
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--gris-borde);
-  box-shadow: 0 10px 25px rgba(10, 54, 99, 0.08);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sobre-foto::before {
+  content: "";
+  position: absolute;
+  inset: 10% 5% 0;
+  background: linear-gradient(180deg, #f0f9ff 0%, var(--azul-claro) 100%);
+  border-radius: 45% 45% 24px 24px / 30% 30% 24px 24px;
 }
 
 .sobre-foto img {
+  position: relative;
   display: block;
   width: 100%;
-  height: 420px;
-  object-fit: cover;
-  object-position: top;
+  max-width: 420px;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 18px 28px rgba(10, 54, 99, 0.18));
+}
+
+.sobre-foto-chip {
+  position: absolute;
+  left: 0;
+  bottom: 28px;
+  background-color: var(--blanco);
+  border-left: 4px solid var(--azul-medico);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.sobre-foto-chip strong {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-size: 1.2rem;
+  color: var(--azul-principal);
 }
 
 #btn-ver-mas {
@@ -722,7 +797,13 @@ body {
   }
 
   .sobre-foto img {
-    height: 360px;
+    max-height: 380px;
+  }
+
+  .sobre-foto-chip {
+    left: 10px;
+    bottom: 14px;
+    padding: 10px 12px;
   }
 
   .grid-galeria-clinica,
